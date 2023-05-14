@@ -1,9 +1,9 @@
-import db from "../database/db"
+/*import db from "../database/db"
 
 
-const getCategoria = async (req, res) => {
+const getVendedorPromocion = async (req, res) => {
     const connection = await db.connectToDatabase();
-    const sql = 'SELECT * FROM CATEGORIA';
+    const sql = 'SELECT * FROM VENDEDOR_PROMOCION';
     const results = await connection.execute(sql);
     res.status(200).json(results.rows)
     await connection.close();
@@ -11,29 +11,29 @@ const getCategoria = async (req, res) => {
 }
   
 
-    const addCategoria = async (req, res) =>{
+    const addVendedorPromocion = async (req, res) =>{
         const connection = await getConnection();
         const {ID, NOMBRE} = req.body;
-        const sql = "INSERT INTO CATEGORIA SET ?";
-        const categoria = {
+        const sql = "INSERT INTO VENDEDOR_PROMOCION SET ?";
+        const vendedorPromocion = {
             ID, NOMBRE
         }
-        await connection.query(sql,categoria, (error, results)=>{
+        await connection.query(sql,vendedorPromocion, (error, results)=>{
             if(error){
                 res.status(500);
                 res.send(error);
             }
             else{
-                res.status(200).json({message: "Categoria creada"})
+                res.status(200).json({message: "promosion del vendedor creada"})
             }
         });
         
     };
     
-    const getOneCategoria = async (req, res) =>{
+    const getOneVendedorPromocion = async (req, res) =>{
         const connection = await getConnection();
         const { id } = req.params;
-        const sql = `SELECT * FROM CATEGOTIA WHERE id = ${id}`;
+        const sql = `SELECT * FROM VENDEDOR_PROMOCION WHERE id = ${id}`;
         await connection.query(sql, (error, result)=>{
             if(error){
                 res.status(500);
@@ -43,48 +43,48 @@ const getCategoria = async (req, res) => {
                 res.status(200).json(result);
             }
             else{
-                res.send(`No hay una categoria  con el id ${id}`)
+                res.send(`No hay una promosion del vendedor  con el id ${id}`)
             }
         });
         
     };
     
 
-    const updateCategoria = async (req, res) =>{
+    const updateVendedorPromocion = async (req, res) =>{
         const connection = await getConnection();
         const { id } = req.params;
         const {nombre } = req.body;
     
-        const categoria = {
+        const vendedorPromocion = {
             nombre
         }
        
-        const sql = "UPDATE CATEGORIA SET ? WHERE id = ?"
+        const sql = "UPDATE VENDEDOR_PROMOCION SET ? WHERE id = ?"
     
-        await connection.query(sql, [categoria, id] ,(error, results)=>{
+        await connection.query(sql, [vendedorPromocion, id] ,(error, results)=>{
             if(error){
                 res.status(500);
                 res.send(error);
             }
             else{
-                res.status(200).json({message: "Categoria Actualizada"})
+                res.status(200).json({message: "promosion del vendedor Actualizada"})
             }
         });
         
     };
     
     
-    const deleteCategoria = async (req, res) =>{
+    const deleteVendedorPromocion = async (req, res) =>{
         const connection = await getConnection();
         const { id } = req.params;
-        const sql = `DELETE FROM CATEGORIA WHERE id = ${id}`;
+        const sql = `DELETE FROM VENDEDOR_PROMOCION WHERE id = ${id}`;
         await connection.query(sql, (error, result)=>{
             if(error){
                 res.status(500);
                 res.send(error);
             }
             else{
-                res.send(`Categoria  con ${id} eliminada`)
+                res.send(`promosion del vendedor  con ${id} eliminada`)
             }
         });
         
@@ -101,3 +101,4 @@ const getCategoria = async (req, res) => {
 
     
     }
+*/
