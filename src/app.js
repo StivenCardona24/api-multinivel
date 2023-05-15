@@ -15,7 +15,7 @@ import promocionRoute from "./routes/promocion.route"
 import nivelRoute from "./routes/nivel.route"
 import inventarioRoute from "./routes/inventario.route"
 import sesionRoute from "./routes/sesion.route"
-
+import tablespaceRoute from "./routes/tablespace.route"
 
 const app = express();
 
@@ -51,10 +51,14 @@ app.get("/", async (req, res) => {
  app.use("/productos", productoRoute);
  app.use("/comision", comisionRoute);
  app.use("/proveedor", proveedorRoute);
- app.use("/vendedor", proveedorRoute);
- app.use("/venta", proveedorRoute);
+ app.use("/vendedor", vendedorRoute);
+ app.use("/venta", ventaRoute);
  app.use("/promocion", promocionRoute);
  app.use("/nivel", nivelRoute);
  app.use("/sesion", sesionRoute);
+ app.use("/tablespace", tablespaceRoute);
+ app.use("/inventario", inventarioRoute);
+
+
 
 export default app;
